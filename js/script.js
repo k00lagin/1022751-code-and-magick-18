@@ -1,23 +1,28 @@
 'use strict';
+var WIZARD_PROPORTION = 1.337;
+var WIND_SPEED = 1.5;
+var FIREBALL_BASE_SPEED = 3.5;
 var fireballSize = 22;
-
-var getFireballSpeed = function(left) {
-  return left ? 5 : 2;
-}
-
-var wizardSpeed  = 3;
+var wizardSpeed = 3;
 var wizardWidth = 70;
 
 
-var getWizardHeight = function() {
-  return 1.337 * wizardWidth;
+function getFireballSpeed(left) {
+  if (left) {
+    return FIREBALL_BASE_SPEED + WIND_SPEED;
+  } else {
+    return FIREBALL_BASE_SPEED - WIND_SPEED;
+  }
 }
 
-//we cannot avoid using wizardWidth as a parameter, cause this'll be impure function
-var getWizardX = function(width/*, wizardWidth */) {
+function getWizardHeight() {
+  return WIZARD_PROPORTION * wizardWidth;
+}
+
+function getWizardX(width) {
   return width / 2 - wizardWidth / 2;
 }
 
-var getWizardY = function(height) {
+function getWizardY(height) {
   return height / 3 - getWizardHeight();
 }
