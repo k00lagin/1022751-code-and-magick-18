@@ -2,6 +2,7 @@
 var WIZARD_PROPORTION = 1.337;
 var WIND_SPEED = 1.5;
 var FIREBALL_BASE_SPEED = 3.5;
+
 var fireballSize = 22;
 var wizardSpeed = 3;
 var wizardWidth = 70;
